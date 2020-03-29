@@ -1,0 +1,23 @@
+%
+% this file is encoded in utf-8
+% v1.7
+
+%%% 參考文獻
+\newpage
+\chapter*{\textit{Appendix} A} 
+\label{appendix_a}
+\addcontentsline{toc}{chapter}{\textit{Appendix A}: Example images from the datasets}
+\renewcommand{\bibname}{\protect\makebox[5cm][s]{Appendix}}
+\input{backpages/example_dataset.tex}
+
+
+\newpage
+\addcontentsline{toc}{chapter}{\nameRef}
+\renewcommand{\bibname}{\protect\makebox[5cm][s]{\nameRef}}
+%  \makebox{} is fragile; need protect
+%\bibliographystyle{alpha}  % 使用 IEEE Trans 期刊格式
+\bibliographystyle{ieeetr}  % 使用 IEEE Trans 期刊格式
+\bibliography{my_bib}  %reference 所需的bib檔
+%\bibliography{my_bib}  %reference 所需的bib檔
+
+%%% 附錄

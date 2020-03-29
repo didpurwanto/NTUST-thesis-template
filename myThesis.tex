@@ -1,0 +1,101 @@
+%
+% this file is encoded in utf-8
+% v1.7
+
+\documentclass[12pt, a4paper]{ntust_report}
+
+\input{common_env}  %基本的環境設定  無需改變  
+\usepackage{amsmath}
+\usepackage{cite}     % Sort all citations
+\usepackage{psfrag}   % Used to insert text into figures
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{color}
+\def\blue{\color{blue}}
+\def\red{\color{red}}
+\def\orange{\color{orange}}
+% \usepackage{cite}     % Sort all citations
+
+
+%\usepackage{subcaption}
+%%%--------------------%%
+\usepackage{float}
+%\usepackage{amssymb}
+%\usepackage{amsfonts}
+%\usepackage{epstopdf}
+%\usepackage{algpseudocode}
+%\usepackage{caption}
+%\captionsetup{compatibility=false}
+%\usepackage{xspace}
+%%%---------------------%%
+
+\usepackage{algorithmic} % pseudocode
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{amssymb}
+\floatname{algorithm}{Method}
+
+\usepackage{xspace}
+
+
+\def\centerhack#1{\hbox to 0pt{\hss\footnotesize #1\hss}}
+\def\dchack#1{\vbox to 0pt{\vss{\hbox to 0pt{\hss#1\hss}}\vss}}
+
+\newcounter{linecounter}
+\newcommand{\resetlinecounter}{\setcounter{linecounter}{1}}
+\newcommand{\llabel}[1]{\arabic{linecounter}. \addtocounter{linecounter}{-1}\refstepcounter{linecounter}\label{#1}\stepcounter{linecounter}}
+\newcommand{\declabel}{\addtocounter{linecounter}{-1}}
+
+\newcommand{\aboveleftarrow}[1]{{\buildrel #1 \over \longleftarrow}}
+\newcommand{\aboverightarrow}[1]{{\buildrel #1 \over \longrightarrow}}
+\newcommand{\aboveleftrightarrow}[1]{{\buildrel #1 \over
+    \leftrightarrow}}
+
+\renewcommand{\paragraph}[1]{\vspace{2mm}\noindent{\textbf{#1}}\quad}
+
+\newcommand{\sign}[2]{\textrm{Sign}_{#2}(#1)}
+\newcommand{\signature}[2]{\sigma_{#2}(#1)}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+%\hfuzz=\maxdimen
+%\tolerance=10000
+%\hbadness=10000
+
+\begin{document}
+\begin{CJK}{UTF8}{bsmi}   %%% ZZZ %%%  <<< 在這裡更改預設中文字型、編碼
+% 編碼：UTF8, Bg5, ...
+% 中文字型名稱：TeXLive 安裝有一套明體字 bsmi, 楷書與其他字型視你的 LaTeX CJK 系統裝設情況而定
+% 注意！ 修改時請一併修改此檔案末端之\end{ZZZ}
+% global CJK setting
+\CJKindent  %%% ZZZ %%%  段首內縮兩格
+
+\input{chinese_trans} %在此檔案處定義文章中的中文名詞
+
+	%---------------------------------------------------------------------------------
+
+	\input{frontpages/ntust_frontpages.tex} 
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	\input{sections/Introduction.tex}
+	\input{sections/Relatedwork.tex}	
+	\input{sections/Method.tex}	
+	\input{sections/Experiment.tex}
+	\input{sections/Conclusion.tex}
+	%\input{sections/References.bib}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% back pages 後頁
+	\input{backpages/ntust_backpages.tex}
+
+
+\end{CJK}  %%% ZZZ %%%
+\end{document} 
+ 

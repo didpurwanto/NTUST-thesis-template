@@ -1,0 +1,32 @@
+
+\chapter{Related Work}
+A myriad of algorithms have been proposed  for action recognition in
+videos, including local spatio-temporal  descriptors such as dense
+trajectories \cite{wang2013dense, wang2011action} and improved dense
+trajectories \cite{wang2013action}, and convolutional neural network
+(CNN) based approach \cite{wang2015action, simonyan2014two,
+wang2015temporal}. However, those methods does not specifically
+devised for first-person videos and thus in general can not provide
+satisfactory detection performance in this scenario. 
+
+Recently, some
+approaches were suggested for first-person action recognition. For
+instance,
+Iwashita \textit{et al.} \cite{iwashita2014first} used the
+conventional local and global motion descriptors and clustered them
+into visual words. Ma \textit{et al.} \cite{ma2016going} addressed a
+two-steam ConvNet architecture which incorporated both spatial and
+temporal networks. However, it only considered the temporal
+characteristics of videos and demands a large number of training
+samples. Ryoo \textit{et al.} \cite{ryoo2015pooled} tracked the
+changes of the descriptor values by pooled time series. It,
+however, only considered simple pooling strategies and some 
+important temporal information may be lost. Recently
+Kahani \textit{et al.} \cite{kahani2016time} grouped the time series
+feature and computed the linear correlation among these groups.
+However, it requires a judicious  selection of the local time
+windows.
+
+Camera motion is the main characteristic of first-person video, which very common in real-world. It be a main challenge of action recognition in first-person video algorithm. \cite{kraft2014motion, jain2013better} propose method to decompose visual motion and extracting the trajectories and make descriptor. 
+
+

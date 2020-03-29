@@ -1,0 +1,54 @@
+\newpage
+\chapter{Experimental and Result}
+\label{sec:Experiment}
+\section{Dataset}
+
+In this section, we assess the performance of the proposed method as
+compared with previous works through exhaustive computer simulations
+based on three famous public first-person video datasets including
+DogCentric \cite{yumi2014first}, JPL First-Person Interaction
+\cite{ryoo2013first}, and Kitchen \cite{spriggs2009temporal} which contain a variety of action
+taken from model's view point. The example images from these datasets are shown in Appendix \ref{appendix_a}.
+
+
+\begin{table}[!b]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \hline
+        Dataset &  Subject & Videos & Class & Baseline Accuracy\\
+        \hline
+        DogCentric & 4 & 205 & 10 & 74.56\% \\
+        JPL dataset & 4 & 205 & 10 & 74.56\% \\
+        \hline
+    \end{tabular}
+    \caption{Survey of the dataset and the banchmark method accuracy.}
+    \label{tab:my_label}
+\end{table}
+
+
+\subsection{Evaluation Protocol Experiment Setup}
+
+
+To evaluate our work, we mainly follow the suggestions provided by
+the first-person video datasets. For Dogcentric dataset
+\cite{yumi2014first}, %following standard evaluation setting,
+we randomly select half of video sequences of each activity from our
+dataset as the training data and use the rest of the sequences for
+testing 100 times and average the results.  The Dogcentric dataset
+consists of 10 class activities: Ball play, Car, Drink, Feed, Turn
+left, Turn right, Pet, Body shake, Sniff, and Walk. As for the JPL
+First-Person Interaction dataset \cite{ryoo2013first}, which consist
+of 7 class activities: Hand shake, Hug, Pet, Wave, Point-Converse,
+Punch, and Throw, the protocols are the same as the Dogcentric
+dataset.
+
+As the feature descriptors, we use the features extracted by TDD
+with spatial information from convolutional layer 5 and temporal
+information from convolutional layer 4. %, as these features in general
+%provide better performance according to our experience.
+Also, we only use the first 10,000 samples in each feature channel
+to conduct EMD  to reduce the dimension of the feature vectors. We
+used SVM classifier with $c=100$ and linear kernel in all of our
+experiments. Also, $L_{2}$ normalization is applied to each feature
+vector.
